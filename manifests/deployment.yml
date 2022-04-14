@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "northshoremvp-4642"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "northshoremvp-4642"
+  template:
+    metadata:
+      labels:
+        app: "northshoremvp-4642"
+    spec:
+      containers:
+        - name: "northshoremvp-4642"
+          image: "northshoremvpdockerhelloworld.azurecr.io/northshoremvp"
+          ports:
+          - containerPort: 80
